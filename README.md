@@ -23,22 +23,22 @@ The engine enforces a strict JSON output from the LLM containing up to three key
 Since this project now uses a Serverless Function, it is recommended to use the Vercel CLI for local testing.
 
 ### 1. Install the Vercel CLI
-\`\`\`bash
+```bash
 npm i -g vercel
-\`\`\`
+```
 
 ### 2. Clone the repository
-\`\`\`bash
+```bash
 git clone https://github.com/Humanshere/agentic-ui-playground.git
 cd agentic-ui-playground
-\`\`\`
+```
 
 ### 3. Link to Vercel and run locally
-\`\`\`bash
+```bash
 vercel link
 vercel env add GEMINI_API_KEY
 vercel dev
-\`\`\`
+```
 The application will run locally on `http://localhost:3000`.
 
 ## Deployment
