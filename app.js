@@ -73,7 +73,7 @@ async function processTurn(message){
         conversationHistory=conversationHistory.slice(-6)
     }
     const API_KEY = ENV.API_KEY; 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${API_KEY}`;
+    const url = `/api/chat`;
 
     const response = await fetch(url, {
         method: "POST",
@@ -86,6 +86,15 @@ async function processTurn(message){
             }))
         })
     });
+
+    if (!response.ok) {
+        const errorText = await response.text();
+        console.error("API Error Details:", errorText);
+        let originalText = canvas.innerHTML; 
+        canvas.innerHTML = `<h3 style="color: red; text-align: center;">Whoa, slow down! The AI needs a second.</h3>` + originalText;
+        conversationHistory.pop(); 
+        return; 
+    }
 
     const data = await response.json();
     const aiText = data.candidates[0].content.parts[0].text;
