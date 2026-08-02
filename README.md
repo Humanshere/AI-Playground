@@ -29,7 +29,7 @@ npm i -g vercel
 
 ### 2. Clone the repository
 \`\`\`bash
-git clone https://github.com/YOUR_USERNAME/agentic-ui-playground.git
+git clone https://github.com/Humanshere/agentic-ui-playground.git
 cd agentic-ui-playground
 \`\`\`
 
