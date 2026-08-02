@@ -72,7 +72,6 @@ async function processTurn(message){
     if(conversationHistory.length>6){
         conversationHistory=conversationHistory.slice(-6)
     }
-    const API_KEY = ENV.API_KEY; 
     const url = `/api/chat`;
 
     const response = await fetch(url, {
